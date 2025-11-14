@@ -122,6 +122,8 @@ crop_info = {
 # LOAD MODEL
 # -------------------------------
 model = pickle.load(open("model.pkl", "rb"))
+label_encoder = pickle.load(open("label_encoder.pkl", "rb"))
+
 
 # -------------------------------
 # UI SETUP
@@ -152,7 +154,10 @@ with col3:
 
 if st.button("🌱 Predict Best Crop"):
     features = np.array([[N, P, K, temp, humidity, ph, rainfall]])
-    prediction = model.predict(features)[0]
+    
+    prediction_index = model.predict(features)[0]
+    prediction = label_encoder.inverse_transform([prediction_index])[0]
+
 
     st.success(f"Recommended Crop: **{prediction.capitalize()}**")
 
@@ -165,3 +170,4 @@ if st.button("🌱 Predict Best Crop"):
 
 st.markdown("---")
 st.markdown("<p style='text-align:center;'>Developed with ❤️ for Smart Farming</p>", unsafe_allow_html=True)
+
