@@ -140,17 +140,17 @@ st.subheader("📥 Enter Soil & Weather Values")
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    N = st.number_input("Nitrogen (N)", 0, 200, 50)
-    P = st.number_input("Phosphorus (P)", 0, 200, 50)
-    K = st.number_input("Potassium (K)", 0, 200, 50)
+    N = st.number_input("Nitrogen (N)", 0, 200)
+    P = st.number_input("Phosphorus (P)", 0, 200)
+    K = st.number_input("Potassium (K)", 0, 200)
 
 with col2:
-    temp = st.number_input("Temperature (°C)", 0.0, 50.0, 25.0)
-    humidity = st.number_input("Humidity (%)", 0.0, 100.0, 50.0)
+    temp = st.number_input("Temperature (°C)", 0.0, 50.0)
+    humidity = st.number_input("Humidity (%)", 0.0, 100.0)
 
 with col3:
-    ph = st.number_input("pH Level", 0.0, 14.0, 6.5)
-    rainfall = st.number_input("Rainfall (mm)", 0.0, 500.0, 100.0)
+    ph = st.number_input("pH Level", 0.0, 14.0)
+    rainfall = st.number_input("Rainfall (mm)", 0.0, 500.0)
 
 if st.button("🌱 Predict Best Crop"):
     features = np.array([[N, P, K, temp, humidity, ph, rainfall]])
@@ -170,4 +170,5 @@ if st.button("🌱 Predict Best Crop"):
 
 st.markdown("---")
 st.markdown("<p style='text-align:center;'>Developed with ❤️ for Smart Farming</p>", unsafe_allow_html=True)
+
 
