@@ -128,7 +128,7 @@ label_encoder = pickle.load(open("label_encoder.pkl", "rb"))
 # -------------------------------
 # UI SETUP
 # -------------------------------
-st.set_page_config(page_title="AgriSmart Crop Recommender", layout="wide")
+st.set_page_config(page_title="AgriSage Crop Recommender", layout="wide")
 
 st.markdown("""
     <h1 style='text-align: center; color: #2E7D32;'>🌾 AgriSmart – Smart Crop Recommendation System</h1>
@@ -170,5 +170,6 @@ if st.button("🌱 Predict Best Crop"):
 
 st.markdown("---")
 st.markdown("<p style='text-align:center;'>Developed with ❤️ for Smart Farming</p>", unsafe_allow_html=True)
+
 
 
